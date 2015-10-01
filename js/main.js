@@ -94,6 +94,59 @@ var textNode = document.createTextNode(gbpPhrase);
 answer3.appendChild(textNode);
 
 
+//---------------------------Answer Four ----------------------
+
+
+//Empty array for use of push after forEach
+var containsWood =[]
+
+
+//Make array of arrays of materials. Push those that contain wood
+var splitByMaterial = items.filter(function(x){
+  var allWithWood = x.materials;
+  if (allWithWood.indexOf('wood') !== -1) {
+    containsWood.push(x.title);
+  }
+})
+console.log(containsWood);
+
+//Make elements of array show up on page
+
+var answer4 = document.querySelector('#answer4');
+  containsWood.forEach(function(x){
+    var textNode = document.createTextNode(x);
+    answer4.appendChild(textNode);
+  })
+
+
+
+
+
+//----------------------------Question Five---------------------
+
+
+//Empty array for use after forEach
+var eightOrMore = [];
+
+//Make array of arrays of materials. Push the title, the number (more than 8), and the materials that make up the eight.
+var splitByAmt = items.filter(function(x){
+  var correctAmt = x.materials;
+  if (correctAmt.length >= 8) {
+    eightOrMore.push(x.title, correctAmt.length, x.materials);
+  }
+})
+
+console.log(eightOrMore);
+
+//Split the array of materials into strings
+
+//Make show up on page
+
+
+
+//----------------------------Question Six---------------------------
+
+
 
 
 
