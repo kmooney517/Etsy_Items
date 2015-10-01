@@ -34,6 +34,45 @@ answer1.appendChild(textNode);
 
 
 
+//----------------------Answer Two----------------------
+
+
+// Create an empty array to push to (forEach has to push to something)
+var titleWithPrice = []
+
+//forEach item, if in price range, push title to new array
+var splitByPrice = items.forEach(function(x){
+  if (x.price > 14 && x.price < 18) {
+    titleWithPrice.push(x.title);
+  };
+});
+console.log(titleWithPrice);
+
+//Split elements of array into separate strings
+var firstItem = titleWithPrice[0];
+var secondItem = titleWithPrice[1];
+var thirdItem = titleWithPrice[2];
+
+console.log(firstItem);
+console.log(secondItem);
+console.log(thirdItem);
+
+//Make it show up on page
+var answer2a = document.querySelector('#answer2a');
+var textNode = document.createTextNode(firstItem);
+answer2a.appendChild(textNode);
+
+var answer2b = document.querySelector('#answer2b');
+var textNode = document.createTextNode(secondItem);
+answer2b.appendChild(textNode);
+
+var answer2c = document.querySelector('#answer2c');
+var textNode = document.createTextNode(thirdItem);
+answer2c.appendChild(textNode);
+
+
+
+
 
 
 
