@@ -125,7 +125,7 @@ var answer4 = document.querySelector('#answer4');
 //----------------------------Question Five---------------------
 
 
-//Empty array for use after forEach
+//Empty array for use after filter
 var eightOrMore = [];
 
 //Make array of arrays of materials. Push the title, the number (more than 8), and the materials that make up the eight.
@@ -146,7 +146,31 @@ console.log(eightOrMore);
 
 //----------------------------Question Six---------------------------
 
+//Empty array to be pushed to
+var madeBySeller = [];
 
+//Filter items by 'who_made' = 'i_did' and push to empty array
+var splitByMaker = items.filter(function(x){
+  var maker = x.who_made; 
+  if (maker.indexOf('i_did') !== -1) {
+    madeBySeller.push(x.title);
+  }
+})
+
+//Shows title of all made by seller
+console.log(madeBySeller);
+
+//Find number of made by seller
+console.log(madeBySeller.length);
+
+//Create String
+var howManyMade = madeBySeller.length + ' were made by their sellers';
+// console.log(howManyMade);
+
+//Make it show up on page
+var answer6 = document.querySelector('#answer6');
+var textNode = document.createTextNode(howManyMade);
+answer6.appendChild(textNode);
 
 
 
