@@ -1,6 +1,5 @@
 (function () {
 
-
 //--------------------Answer One------------------------
 
 //Map prices from item list into a new array
@@ -33,7 +32,6 @@ var textNode = document.createTextNode(str);
 answer1.appendChild(textNode);
 
 
-
 //----------------------Answer Two----------------------
 
 
@@ -48,28 +46,14 @@ var splitByPrice = items.forEach(function(x){
 });
 console.log(titleWithPrice);
 
-//Split elements of array into separate strings
-var firstItem = titleWithPrice[0];
-var secondItem = titleWithPrice[1];
-var thirdItem = titleWithPrice[2];
-
-console.log(firstItem);
-console.log(secondItem);
-console.log(thirdItem);
-
-//Make it show up on page
-var answer2a = document.querySelector('#answer2a');
-var textNode = document.createTextNode(firstItem);
-answer2a.appendChild(textNode);
-
-var answer2b = document.querySelector('#answer2b');
-var textNode = document.createTextNode(secondItem);
-answer2b.appendChild(textNode);
-
-var answer2c = document.querySelector('#answer2c');
-var textNode = document.createTextNode(thirdItem);
-answer2c.appendChild(textNode);
-
+//Display on Screen
+var answer2 = document.querySelector('#answer2');
+  titleWithPrice.forEach(function(x){
+    var textNode2 = document.createTextNode(x);
+    var linebreak = document.createElement('br');
+    answer2.appendChild(textNode2);
+    answer2.appendChild(linebreak);
+  })
 
 //--------------------------Answer Three ----------------------
 
@@ -84,15 +68,15 @@ var splitByCurrencyCode = items.forEach(function(x){
 })
 console.log(currencyCode);
 
-//Make the array go to a string
-var gbpPhrase = currencyCode[0];
-console.log(gbpPhrase);
 
 //Make it show up on the page
 var answer3 = document.querySelector('#answer3');
-var textNode = document.createTextNode(gbpPhrase);
-answer3.appendChild(textNode);
-
+  currencyCode.forEach(function(x){
+    var textNode3 = document.createTextNode(x);
+    var linebreak = document.createElement('br');
+    answer3.appendChild(textNode3);
+    answer3.appendChild(linebreak);
+  })
 
 //---------------------------Answer Four ----------------------
 
@@ -114,12 +98,11 @@ console.log(containsWood);
 
 var answer4 = document.querySelector('#answer4');
   containsWood.forEach(function(x){
-    var textNode = document.createTextNode(x);
-    answer4.appendChild(textNode);
+    var textNode4 = document.createTextNode(x);
+    var linebreak = document.createElement('br');
+    answer4.appendChild(textNode4);
+    answer4.appendChild(linebreak);
   })
-
-
-
 
 
 //----------------------------Question Five---------------------
@@ -132,16 +115,27 @@ var eightOrMore = [];
 var splitByAmt = items.filter(function(x){
   var correctAmt = x.materials;
   if (correctAmt.length >= 8) {
-    eightOrMore.push(x.title, correctAmt.length, x.materials);
-  }
-})
-
+    eightOrMore.push(x);
+  };
+});
 console.log(eightOrMore);
 
-//Split the array of materials into strings
+//Now take each thing that has more than 8 materials and create a text node.
+eightOrMore.forEach(function(x){
+  var answer5 = document.querySelector('#answer5');
+  var textNode5 = document.createTextNode(x.title + ' has ' + x.materials.length +' materials:');
+  var linebreak = document.createElement('br');
+  answer5.appendChild(textNode5);
+  answer5.appendChild(linebreak);
 
-//Make show up on page
-
+  x.materials.forEach(function(y){
+    var answer5 = document.querySelector('#answer5');
+    var textNode5 = document.createTextNode(y);
+    var linebreak = document.createElement('br');
+    answer5.appendChild(textNode5);
+    answer5.appendChild(linebreak);
+  })
+})
 
 
 //----------------------------Question Six---------------------------
