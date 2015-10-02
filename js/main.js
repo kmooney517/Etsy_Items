@@ -166,34 +166,4 @@ var answer6 = document.querySelector('#answer6');
 var textNode = document.createTextNode(howManyMade);
 answer6.appendChild(textNode);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }());
