@@ -63,7 +63,7 @@ var currencyCode = [];
 //forEach item, if currency code = GBP, push to currencyCode;
 var splitByCurrencyCode = items.forEach(function(x){
   if (x.currency_code === 'GBP'){
-    currencyCode.push(x.title + ' costs ' + '£' + x.price);
+    currencyCode.push(x.title + ' costs ' + '\u00A3' + x.price);
   }
 })
 console.log(currencyCode);
